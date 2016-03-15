@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragmentContainer, fragment);
         fragmentTransaction.commit();
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -88,8 +89,21 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            // Set the fragment initially
+            MainFragment fragment = new MainFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentContainer, fragment);
+            fragmentTransaction.commit();
             // Handle the camera action
+
         } else if (id == R.id.nav_gallery) {
+            // Set the fragment initially
+            GalleryFragment fragment = new GalleryFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentContainer, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_slideshow) {
 
